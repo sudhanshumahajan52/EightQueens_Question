@@ -4,13 +4,30 @@ public class GameStrategy {
 
 	private int getColumn(int cellId) {
 		// WRITE YOUR LOGIC HERE...................................		
+		int count=0;
+		for(int i=0;i<8;i++) {
+			for(int j=0;j<8;j++) {
+				if(count==cellId) {
+					return j;
+				}
+				count++;
+			}
+		}
 
 		return 0;	// just for the heck of it
 	}
 	
 	private int getRow(int cellId) {
 		// WRITE YOUR LOGIC HERE....................................
-		
+		int count=0;
+		for(int i=0;i<8;i++) {
+			for(int j=0;j<8;j++) {
+				if(count==cellId) {
+					return i;
+				}
+				count++;
+			}
+		}
 		return 0;	// just for the heck of it
 	}
 
@@ -29,6 +46,23 @@ public class GameStrategy {
 			WRITE YOUR LOGIC HERE...............................
 
 		*/
+		for(int i=0;i<8;i++) {
+			if(placedQueens[i][col]!=false) {
+				isValid=false;
+				return isValid;
+			}
+		}
+		
+		
+		for(int i=0;i<8;i++) {
+			if(placedQueens[row][i]!=false) {
+				isValid=false;
+				return isValid;
+			}
+		}
+		
+		placedQueens[row][col]=true;
+		numQueens++;
 		return isValid;
 	}
 }
