@@ -61,6 +61,34 @@ public class GameStrategy {
 			}
 		}
 		
+		for(int i=row,j=col;i<8 && j<8;i++,j++) {
+			if(placedQueens[i][j]!=false) {
+				isValid=false;
+				return isValid;
+			}
+		}
+		
+		for(int i=row,j=col;i>=0 && j>=0;i--,j--) {
+			if(placedQueens[i][j]!=false) {
+				isValid=false;
+				return isValid;
+			}
+		}
+		
+		for(int i=row,j=col;i<8 && j>=0;i++,j--) {
+			if(placedQueens[i][j]!=false) {
+				isValid=false;
+				return isValid;
+			}
+		}
+		
+		for(int i=row,j=col;i>=0 && j<8;i--,j++) {
+			if(placedQueens[i][j]!=false) {
+				isValid=false;
+				return isValid;
+			}
+		}
+		
 		placedQueens[row][col]=true;
 		numQueens++;
 		return isValid;
